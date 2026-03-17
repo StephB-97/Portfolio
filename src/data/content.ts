@@ -24,28 +24,29 @@ bio1: "I build backend systems designed for environments where reliability isn't
 };
 
 export const projects = [
-  {title: "PawPals",
+  {
+    title: "Portfolio Management Dashboard",
+    desc: "Full-stack investment platform with real-time market data, AI-powered news sentiment analysis (VADER NLP), event-driven portfolio intelligence across 5 financial event categories, and Modern Portfolio Theory optimization. Persistent user data on AWS DynamoDB with Firebase auth.",
+    tags: ["Python", "Streamlit", "AWS DynamoDB", "Firebase", "VADER NLP", "SciPy", "yFinance", "Plotly"],
+    cta: "LIVE DEMO",
+    href: "https://sb-portfolio-management.streamlit.app",
+    github: "https://github.com/StephB-97/Portfolio-Management-Dashboard",
+  },
+  {
+    title: "PawPals",
     desc: "Pet social discovery platform with swipe-based and map-based matching, AI-generated pet profiles, and community events. Built with a Next.js frontend, FastAPI AI microservice, PostgreSQL + PostGIS for geospatial queries, and Redis caching — containerized with Docker and deployed on Vercel + AWS.",
     tags: ["Next.js", "TypeScript", "FastAPI", "PostgreSQL", "OpenAI API", "Docker", "Redis", "Mapbox"],
     cta: "VIEW ON GITHUB",
     href: "https://github.com/StephB-97/PawPals-App",
   },
   {
-    title: "Portfolio Management Dashboard",
-    desc: "Full-stack investment platform inspired by Bloomberg Terminal concepts — real-time market data, AI-powered news sentiment analysis (VADER NLP), event-driven portfolio intelligence across 5 event categories, and Modern Portfolio Theory optimization. Persistent user data on AWS DynamoDB with Firebase auth. Built as a POC for a planned Next.js + FastAPI migration.",
-    tags: ["Python", "Streamlit", "AWS DynamoDB", "Firebase", "VADER NLP", "SciPy", "yFinance", "Plotly"],
-    cta: "VIEW ON GITHUB",
-    github: "https://github.com/StephB-97/Portfolio-Management-Dashboard",
-  },
-  {
     title: "Rentals App",
     desc: "Full-stack rental property platform where users can browse, create, edit, and delete listings with image uploads. Features user authentication, session management, server-side form validation, and a RESTful MVC architecture built with Node.js and Express.",
     tags: ["Node.js", "Express", "MongoDB", "EJS", "Cloudinary", "Bootstrap"],
-    cta: "VIEW ON GITHUB",
-    href: "https://rentals-app-tzkl.onrender.com",
-    
+    cta: "LIVE DEMO",
+    href: "https://rentals-app-tzkl.onrender.com/",
+    github: "https://github.com/StephB-97/Rentals-App",
   },
-
 ];
 
 export const skills = [
