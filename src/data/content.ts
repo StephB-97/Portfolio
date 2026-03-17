@@ -29,7 +29,7 @@ export const projects = [
     desc: "Full-stack investment platform with real-time market data, AI-powered news sentiment analysis (VADER NLP), event-driven portfolio intelligence across 5 financial event categories, and Modern Portfolio Theory optimization. Persistent user data on AWS DynamoDB with Firebase auth.",
     tags: ["Python", "Streamlit", "AWS DynamoDB", "Firebase", "VADER NLP", "SciPy", "yFinance", "Plotly"],
     cta: "LIVE DEMO",
-    href: "https://sb-portfolio-management.streamlit.app",
+    href: "https://portfolio-management-dashboard.streamlit.app",
     github: "https://github.com/StephB-97/Portfolio-Management-Dashboard",
   },
   {
