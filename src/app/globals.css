@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+SC:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: #0C0C0A;
+  color: #F0EDE6;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 18px;        /* ↑ base font size up from default */
+  font-weight: 400;       /* ↑ base weight up from 300 */
+  line-height: 1.75;
+}
+
+/* ── Scroll Reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
+
+/* ── Delay utilities ── */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+
+/* ── Components ── */
+@layer components {
+
+  /* Nav links — slightly bigger and heavier */
+  .nav-link {
+    font-family: 'Cormorant SC', serif;
+    font-size: 13px;          /* was 12px */
+    font-weight: 500;         /* was 400 */
+    letter-spacing: 0.14em;
+    color: #C8C0B0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.25s;
+    text-transform: uppercase;
+  }
+  .nav-link:hover { color: #C4965A; }
+
+  /* Gold CTA links */
+  .gold-cta {
+    font-family: 'Cormorant SC', serif;
+    font-size: 12px;          /* was 11px */
+    font-weight: 600;         /* was 500 */
+    letter-spacing: 0.18em;
+    color: #C4965A;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s, letter-spacing 0.3s;
+    display: inline-block;
+    text-transform: uppercase;
+  }
+  .gold-cta:hover { opacity: 0.65; letter-spacing: 0.24em; }
+
+  /* Buttons */
+  .btn-outline {
+    display: inline-block;
+    padding: 13px 38px;
+    border: 1px solid #E8E4DC;
+    font-family: 'Cormorant SC', serif;
+    font-size: 13px;          /* was 12px */
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    color: #E8E4DC;
+    background: transparent;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .btn-outline:hover { background: #E8E4DC; color: #0C0C0A; }
+
+  .btn-gold {
+    display: inline-block;
+    padding: 13px 38px;
+    border: 1px solid #C4965A;
+    font-family: 'Cormorant SC', serif;
+    font-size: 13px;          /* was 12px */
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    color: #C4965A;
+    background: transparent;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .btn-gold:hover { background: #C4965A; color: #0C0C0A; }
+
+  /* Section label */
+  .section-label { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+  .section-label span {
+    font-family: 'Cormorant SC', serif;
+    font-size: 12px;          /* was 11px */
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    color: #C4965A;
+    text-transform: uppercase;
+  }
+  .section-divider { display: block; width: 36px; height: 1px; background: #C4965A; flex-shrink: 0; }
+
+  /* Project card */
+  .card {
+    border: 1px solid #222220;
+    padding: 36px 32px 32px;
+    background: #0F0F0D;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: border-color 0.35s, background 0.35s;
+  }
+  .card:hover { border-color: rgba(196,150,90,0.35); background: #141410; }
+
+  /* Tag pills on cards */
+  .tag {
+    font-family: 'Cormorant SC', serif;
+    font-size: 11px;          /* was 10px */
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: #7A7060;
+    padding: 3px 10px;
+    border: 1px solid #2A2820;
+    display: inline-block;
+    text-transform: uppercase;
+  }
+
+  /* Contact fields */
+  .field {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #252420;
+    padding: 14px 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;          /* was 18px */
+    font-weight: 400;         /* was 300 */
+    color: #E0DDD6;
+    outline: none;
+    transition: border-color 0.25s;
+    display: block;
+  }
+  .field:focus { border-bottom-color: #C4965A; }
+  .field::placeholder { color: #3A3530; }
+
+  /* Skill rows */
+  .skill-row {
+    border-top: 1px solid #1E1E1C;
+    padding: 28px 0;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 20px;
+    align-items: baseline;
+  }
+  .skill-row:last-child { border-bottom: 1px solid #1E1E1C; }
+
+  /* Social icon link */
+  .social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid #2A2820;
+    border-radius: 2px;
+    color: #787060;
+    transition: border-color 0.25s, color 0.25s, background 0.25s;
+    text-decoration: none;
+  }
+  .social-icon:hover { border-color: #C4965A; color: #C4965A; background: #C4965A11; }
+}
